@@ -1,0 +1,84 @@
+.root {
+  @apply relative w-full h-screen;
+  overflow: hidden;
+}
+
+.control {
+  @apply opacity-0 transition duration-150;
+}
+
+.root:hover .control {
+  @apply opacity-100;
+}
+
+.positionIndicatorsContainer {
+  @apply block absolute bottom-6 left-0 w-full z-10;
+}
+
+.positionIndicator {
+  @apply rounded-full mr-8;
+}
+
+.dot {
+  @apply bg-accents-5 transition  rounded-full;
+  width: 6px;
+  height: 6px;
+}
+
+.positionIndicator:hover .dot {
+  @apply bg-accents-7;
+}
+
+.positionIndicator:focus {
+  @apply outline-none;
+}
+
+.positionIndicator:focus .dot {
+  @apply shadow-outline-normal;
+}
+
+.positionIndicatorActive .dot {
+  @apply bg-primary;
+}
+
+.positionIndicatorActive:hover .dot {
+  @apply bg-primary-2;
+}
+.faderSlide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  @apply pointer-events-none opacity-0 transition-all duration-700 ease-in-out lg:text-2xl;
+
+  & .subTitle {
+    @apply mb-lg max-w-xs transition-transform duration-500 ease-in-out;
+    line-height: 1.41;
+    transform: translateX(5rem);
+    font-size: 0.9em;
+  }
+  & .title {
+    @apply max-w-sm mb-lg lg:max-w-xl xl:max-w-2xl transition-transform duration-700 ease-in-out;
+    line-height: 1.1;
+    transform: translateX(5rem);
+    font-size: 3em;
+  }
+  & .buttonText {
+    @apply transition-transform duration-1000 ease-in-out;
+    font-size: 0.9em;
+    transform: translateX(5rem);
+    font-size: 0.9em;
+  }
+}
+.faderSlide.current {
+  @apply pointer-events-auto opacity-100 duration-1000;
+  & .subTitle {
+    transform: translateX(0);
+  }
+  & .title {
+    transform: translateX(0);
+  }
+  & .buttonText {
+    transform: translateX(0);
+  }
+}

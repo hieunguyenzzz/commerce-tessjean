@@ -1,0 +1,47 @@
+.root {
+  @apply flex items-center h-full;
+}
+
+.list {
+  @apply flex flex-row items-center justify-items-end h-full space-x-md;
+}
+
+.item {
+  @apply cursor-pointer h-header flex items-center  relative transition ease-in-out duration-100 outline-none;
+
+  & svg {
+    @apply text-2xl;
+  }
+  &.itemhidden {
+    @apply lg:hidden;
+  }
+  &.visibleOnLg {
+    @apply hidden lg:flex;
+  }
+  &:hover {
+    @apply transition scale-110 duration-100;
+  }
+
+  &:last-child {
+    @apply mr-0;
+  }
+
+  &:focus,
+  &:active {
+    @apply outline-none;
+  }
+}
+
+.bagCount {
+  @apply bg-primary  flex-shrink-0 text-accents-0 ml-px rounded-full flex items-center justify-center font-bold text-xs;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.avatarButton {
+  @apply inline-flex justify-center rounded-full;
+}
+
+.avatarButton:focus {
+  @apply outline-none;
+}

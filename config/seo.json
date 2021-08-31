@@ -1,0 +1,26 @@
+{
+  "title": "Tessjean",
+  "titleTemplate": "%s - Tessjean",
+  "description": "Tess Jean is a contemporary fashion label that embodies effortless style for the modern woman.",
+  "openGraph": {
+    "title": "Tessjean",
+    "description": "Tess Jean is a contemporary fashion label that embodies effortless style for the modern woman.",
+    "type": "website",
+    "locale": "en_IE",
+    "url": "https://tessjean.com",
+    "site_name": "Tessjean",
+    "images": [
+      {
+        "url": "/card.png",
+        "width": 800,
+        "height": 600,
+        "alt": "Tessjean"
+      }
+    ]
+  },
+  "twitter": {
+    "handle": "@tessjean",
+    "site": "@tessjean",
+    "cardType": "summary_large_image"
+  }
+}

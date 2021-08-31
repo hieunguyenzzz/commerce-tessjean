@@ -1,0 +1,17 @@
+.root {
+  @apply py-12 flex flex-col w-full px-6;
+
+  @apply md:flex-row;
+
+  & .asideWrapper {
+    @apply pr-3 w-full relative;
+
+    @apply md:w-48;
+  }
+
+  & .aside {
+    @apply flex flex-row w-full justify-around mb-12;
+
+    @apply md:mb-0 md:block md:sticky md:top-32;
+  }
+}

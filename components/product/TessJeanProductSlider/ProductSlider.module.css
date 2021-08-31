@@ -1,0 +1,26 @@
+.root {
+  position: relative;
+}
+
+.leftControl,
+.rightControl {
+  @apply absolute text-accents-9 top-1/2 transform -translate-y-1/2 z-20 text-2xl w-10 h-10  flex items-center justify-center rounded-full;
+}
+
+.leftControl:hover,
+.rightControl:hover {
+  @apply bg-primary scale-110;
+}
+
+.leftControl:hover,
+.rightControl:hover {
+  @apply outline-none shadow-outline-normal;
+}
+
+.leftControl {
+  @apply bg-cover left-0 md:-left-4;
+}
+
+.rightControl {
+  @apply bg-cover right-0 md:-right-4;
+}

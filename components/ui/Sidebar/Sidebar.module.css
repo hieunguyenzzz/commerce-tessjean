@@ -1,0 +1,82 @@
+.root {
+  @apply fixed top-0 w-full overflow-hidden h-full z-50 pointer-events-none;
+  touch-action: none;
+  & .sidebar {
+    @apply absolute inset-y-0 opacity-0 max-w-full flex outline-none;
+  }
+  &.open {
+    @apply pointer-events-auto;
+    & .sidebar {
+      @apply opacity-100;
+    }
+    & .overlay {
+      @apply absolute inset-0 bg-accents-9 opacity-50 transition-opacity;
+    }
+  }
+}
+.root.left {
+  @apply left-0;
+  & .sidebar {
+    @apply left-0 sm:pr-16;
+    animation: sidebaranimationClose 300ms ease-in-out;
+  }
+  &.open {
+    & .sidebar {
+      animation: sidebaranimationOpen 300ms ease-in-out;
+    }
+  }
+}
+
+@keyframes sidebaranimationOpen {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes sidebaranimationClose {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+.root.right {
+  @apply right-0;
+  & .sidebar {
+    @apply right-0 sm:pl-16;
+    animation: sidebaranimationCloseRight 300ms ease-in-out;
+  }
+  &.open {
+    @apply pointer-events-auto;
+    & .sidebar {
+      animation: sidebaranimationOpenRight 300ms ease-in-out;
+    }
+  }
+}
+@keyframes sidebaranimationOpenRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes sidebaranimationCloseRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}

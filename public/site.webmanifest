@@ -1,0 +1,22 @@
+{
+  "name": "Tess Jean",
+  "short_name": "Tess Jean",
+  "description": "Tess Jean is a contemporary fashion label that embodies effortless style for the modern woman.",
+  "display": "standalone",
+  "start_url": "/",
+  "theme_color": "#C8BF71",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

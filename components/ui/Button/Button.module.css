@@ -1,0 +1,65 @@
+.root {
+  @apply text-button border border-white border-opacity-50 bg-secondary px-md py-[15px] text-accents-1 cursor-pointer inline-flex transition ease-in-out duration-150 text-center justify-center items-center;
+  font-family: 'Montserrat';
+}
+.root.small {
+  @apply px-[22px] py-[11px] text-[12px];
+}
+.root.secondary {
+  @apply bg-transparent text-secondary  border-secondary-2;
+}
+.root:hover {
+  @apply bg-primary text-accents-0 shadow-outline-normal hover:border-primary-2;
+}
+
+.root:focus {
+  @apply shadow-outline-normal outline-none ring-primary;
+}
+
+.root[data-active] {
+  @apply bg-gray-600;
+}
+
+.loading {
+  @apply bg-accents-1 text-accents-3 border-accents-2 cursor-not-allowed;
+}
+
+.slim {
+  @apply py-2 transform-none normal-case;
+}
+
+.disabled,
+.disabled:hover {
+  @apply text-accents-4 border-accents-2 bg-accents-1 cursor-not-allowed;
+  filter: grayscale(1);
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
+.link {
+  padding: 0;
+  background: transparent;
+  position: relative;
+  box-shadow: none;
+  @apply text-primary leading-loose text-sm  max-w-xs border-none  font-normal;
+  white-space: nowrap;
+}
+.link:after {
+  content: '';
+  height: 2px;
+  background: var(--primary);
+  width: 20%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  @apply transition-all duration-300 ease-in-out;
+}
+.ghost {
+  @apply bg-transparent border-white text-black;
+}
+.link:hover {
+  @apply text-primary bg-transparent border-transparent;
+}
+.link:hover::after {
+  width: 100%;
+}

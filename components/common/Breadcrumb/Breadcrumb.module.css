@@ -1,0 +1,11 @@
+.root {
+  @apply font-montserrat;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  @screen md {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

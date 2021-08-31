@@ -1,0 +1,10 @@
+.root {
+  @apply flex flex-col h-full relative max-w-md bg-accents-0;
+  width: calc(100vw - 88px);
+  min-width: 200px;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+.content {
+  @apply flex-1 flex flex-col w-full py-md;
+}

@@ -1,0 +1,68 @@
+.root {
+  @apply relative grid items-start gap-8 grid-cols-1 overflow-x-hidden;
+  @apply lg:grid-cols-12;
+}
+
+.productDisplay {
+  @apply relative flex px-0 pb-0 box-border col-span-1  md:min-h-[700px];
+  min-height: 600px;
+  @apply lg:mx-0 lg:col-span-6 lg:mr-[-2rem] lg:ml-[-2rem] lg:min-h-full lg:h-full;
+}
+
+.squareBg {
+  @apply absolute inset-0  z-0 h-full;
+}
+
+.nameBox {
+  @apply absolute top-6 left-0 z-20 pr-16;
+  @apply lg:left-6 lg:pr-16;
+
+  & .name {
+    @apply px-6 py-2 bg-accents-3 text-primary font-bold;
+    font-size: 2rem;
+    letter-spacing: 0.4px;
+  }
+
+  & .price {
+    @apply px-6 py-2 pb-4 bg-accents-3 text-primary font-bold inline-block tracking-wide;
+  }
+
+  @screen lg {
+    & .name,
+    & .price {
+      @apply text-white;
+    }
+  }
+}
+
+.sidebar {
+  @apply flex flex-col col-span-1 mx-auto max-w-8xl px-6 w-full h-full;
+  @apply lg:col-span-6 lg:py-24 lg:justify-between;
+}
+
+.sliderContainer {
+  @apply absolute z-10 inset-0 flex items-center justify-center overflow-x-hidden;
+}
+
+.imageContainer {
+  & > div {
+    @apply h-full;
+    & > div {
+      @apply h-full;
+    }
+  }
+}
+
+.img {
+  @apply w-full h-auto max-h-full object-cover;
+}
+
+.button {
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+
+  @screen sm {
+    min-width: 300px;
+  }
+}

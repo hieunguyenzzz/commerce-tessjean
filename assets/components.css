@@ -1,0 +1,111 @@
+.fit {
+  min-height: calc(100vh - calc(var(--header-height)));
+}
+.hover-effect-1 {
+  @apply relative;
+  &:before {
+    position: absolute;
+    top: -0.2em;
+    left: -0.2em;
+    right: -0.2em;
+    bottom: -0.2em;
+    content: '';
+    background: currentColor;
+    opacity: 0;
+    border-radius: inherit;
+    transition: opacity 0.15s ease-in;
+  }
+  &:hover:before {
+    background: currentColor;
+    opacity: 0.2;
+  }
+  &:active:before {
+    transform: scale(1);
+    animation: rubberBand;
+    animation-duration: 0.5s;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.text-effect-1 {
+  @apply inline overflow-hidden relative cursor-pointer;
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    opacity: 0.5;
+    border-bottom: 0.12em solid currentColor;
+    transition: width 0.3s, color 0.3s;
+  }
+  &:hover:after {
+    @apply text-current;
+    width: 100%;
+    left: 0;
+  }
+  &.text-effect-1_active:after {
+    @apply text-current;
+    border-color: var(--primary-2);
+    width: 100%;
+    left: 0;
+  }
+}
+
+.text-effect-2 {
+  @apply inline-flex;
+  &:before {
+    content: '';
+    align-self: center;
+    background: currentColor;
+    height: 2px;
+    width: 0;
+    transition: width 0.3s;
+    @apply ease-in-out;
+  }
+
+  &:hover:before {
+    width: 0.8em;
+    margin-right: 0.3em;
+  }
+  &.text-effect-2_active:before {
+    width: 0.8em;
+    margin-right: 0.3em;
+  }
+}
+.card-shadow {
+  box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

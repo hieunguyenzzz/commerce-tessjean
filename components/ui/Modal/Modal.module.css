@@ -1,0 +1,17 @@
+.root {
+  @apply fixed bg-black bg-opacity-50 flex inset-0 z-50 justify-center overflow-y-scroll;
+  &.noBackgroud {
+    @apply bg-transparent;
+    & .modal {
+      @apply bg-transparent;
+    }
+  }
+}
+
+.modal {
+  @apply bg-accents-0 max-w-full p-6 relative border-transparent m-auto;
+}
+
+.modal:focus {
+  @apply outline-none;
+}

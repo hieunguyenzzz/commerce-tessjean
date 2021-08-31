@@ -1,0 +1,10 @@
+.root {
+  @apply mx-auto w-full px-[16px] md:px-md lg:px-[60px] max-w-[1440px];
+  &.fluid {
+    max-width: unset;
+  }
+  &.small {
+    @apply lg:px-[189px];
+    width: clac(100vh - var(--header-height));
+  }
+}

@@ -1,0 +1,99 @@
+.root {
+  @apply h-header;
+  @screen md {
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  }
+  & > * {
+    @apply relative h-header flex items-center w-full top-0 left-0 right-0 bg-accents-0 z-40 transition-colors duration-300;
+  }
+  &.hasScrolled > * {
+    @apply fixed;
+  }
+  &.transparent {
+    & + * {
+      margin-top: calc(0px - var(--header-height));
+    }
+    &:hover > * {
+      @apply bg-accents-0 text-black;
+    }
+    & > * {
+      @apply bg-transparent shadow-none  hover:bg-accents-0 text-white;
+    }
+  }
+  &.hasScrolled > * {
+    @apply bg-accents-0 text-black;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.link {
+  @apply text-h7 z-10 h-header flex items-center  truncate transition ease-in-out duration-75 cursor-pointer relative overflow-hidden leading-extra-loose;
+}
+.link:after {
+  @apply absolute inset-x-0 bottom-0 w-0 border-b-2;
+  content: '';
+  transition: width 0.3s;
+}
+.link:hover {
+  @apply text-primary;
+}
+
+.link.active:after {
+  @apply w-full left-0 border-primary;
+}
+.link:hover:after {
+  @apply text-primary w-full left-0;
+}
+.link:focus {
+  @apply outline-none text-primary;
+}
+
+.logo {
+  @apply isolate flex justify-center h-md md:h-auto;
+}
+.item {
+  @apply cursor-pointer relative transition ease-in-out duration-100 outline-none;
+  & svg {
+    @apply text-[24px] md:text-xl;
+    stroke-width: 1.2;
+  }
+
+  &.itemhidden {
+    @apply lg:hidden;
+  }
+
+  &:hover {
+    @apply text-primary transition scale-110 duration-100;
+  }
+
+  &:last-child {
+    @apply mr-0;
+  }
+
+  &:focus,
+  &:active {
+    @apply outline-none;
+  }
+}
+.bagCount {
+  @apply bg-primary  flex-shrink-0 text-accents-0 ml-px rounded-full flex items-center justify-center font-bold text-xs;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+@keyframes sidebaranimationOpen {
+  0% {
+    transform: translateX(-110%);
+  }
+  110% {
+    transform: translateX(0);
+  }
+}
+@keyframes sidebaranimationClose {
+  0% {
+    transform: translateX(0);
+  }
+  110% {
+    transform: translateX(110%);
+  }
+}
